@@ -20,7 +20,7 @@ public class Traversing2DArrays
 
     for (String[] row : board){
       for(String col: row){
-        System.out.print(col+", ");
+        System.out.print(col+"\t ");
       }
       System.out.println("");
     }
