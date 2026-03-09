@@ -94,6 +94,15 @@ public class Names2D
    
    
     System.out.println("\nShift an element in a column: Shift the last name in the first row down to the last row:");
+
+
+
+    temp = names[0][0];
+    names[0][0] = names[3][0];
+    names[3][0] = temp;
+
+
+    
    
   }
 }
