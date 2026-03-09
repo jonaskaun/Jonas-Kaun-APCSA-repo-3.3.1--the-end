@@ -21,6 +21,10 @@ public class Tile
   private String hidden;
   private String matched;
   
+
+  public void setName(String s){
+    value = s;
+  }
   /**
    * Construct a tile with a string value. The default state
    * of a tile is hidden (face down) on the board and is unmatched.
@@ -121,6 +125,7 @@ public class Tile
    */
   public String toString()
   {
+    
     return value;
   }
 }
