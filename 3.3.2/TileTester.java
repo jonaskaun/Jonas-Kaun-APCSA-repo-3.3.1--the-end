@@ -54,34 +54,7 @@ public class TileTester
         gamePlay[i][j] = new Tile("\t[?]");
       }
     }
-    boolean end = false;
-    while(end = false){
-      for (Tile[] row: gameboard){
-        for (Tile col:row){
-          System.out.print("\t"+ col);      
-        }
-      System.out.println("");
-      }
 
-      System.out.println("\n What space would you like to uncover?\n\n enter Row");
-      int Row = sc.nextInt();
-      System.out.println("\n Which Column?");
-      int Col = sc.nextInt();
-
-
-      
-
-
-
-
-
-
-
-
-
-      end = true;
-
-    }
   
     
   }

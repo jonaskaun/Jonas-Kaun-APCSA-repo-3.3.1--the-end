@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /** 
  * Activity 3.3.2
  *
@@ -21,8 +23,35 @@ public class Board
    */
   public Board()
   {
-   
-    /* your code here */ 
+    // randomization ( uber cursed, but functional)
+    ArrayList<String> tileCopy = new ArrayList<String>();
+    String[] randomizer = new String[12];
+    int random;
+    for(String s: tileValues){
+      tileCopy.add(s);
+    }
+    int i = 0;
+    while(i<randomizer.length){
+      random = (int)((Math.random()*tileCopy.size()));
+      randomizer[i] = tileCopy.get(random);
+      tileCopy.remove(random);
+      i++;
+    }
+    i=0;
+    int j = 0;
+    for(String s: randomizer){
+      gameboard[i][j] = new Tile(s);
+
+      if(j == 3 ){
+        j =0;
+        i++;
+      }
+      else{
+        j++;
+      }
+    }
+    
+    
 
   }
 
@@ -37,10 +66,25 @@ public class Board
    */
   public String toString()
   {
+    String boardString ="";
  
-    /* your code here */
+    for(Tile[] t:gameboard){
+      for(Tile u : t){
+        boardString += "\t";
+        if(u.isShowingValue()== true){
+          
+          boardString += u;
+
+
+        }
+        
+        
+      }
+      boardString += "\n";
+      
+    }
  
-    return "";
+    return boardString;
   }
 
   /** 
@@ -53,10 +97,18 @@ public class Board
    */
   public boolean allTilesMatch()
   {
+    boolean checkTilesMatch = true;
+    for(Tile[] t: gameboard){
+      for(Tile u: t){
+        if (u.matched()== false){
+          checkTilesMatch = false;
+        }
+      }
+    }
 
-    /* your code  here */
     
-    return true;
+    
+    return checkTilesMatch;
   }
 
   /** 
@@ -73,7 +125,7 @@ public class Board
   public void showValue (int row, int column)
   {
    
-    /* your code here */
+    System.out.println((gameboard[row][column]).getValue());
   }  
 
   /** 
@@ -96,10 +148,22 @@ public class Board
   public String checkForMatch(int row1, int col1, int row2, int col2)
   {
     String msg = "";
+    if(gameboard[row1][col1].getValue().equals(gameboard[row2][col2].getValue())){
+      gameboard[row1][col1].show();
+      gameboard[row2][col2].show();
+      msg = "Match!";
 
-     /* your code here */
+
+    }
+    else{
+      gameboard[row1][col1].hide();
+      gameboard[row2][col2].hide();
+      msg = "No Match :(";
+    }
+
+     
     
-     return msg;
+    return msg;
   }
 
   /** 
@@ -113,9 +177,18 @@ public class Board
   public boolean validateSelection(int row, int col)
   {
 
-    /* your code here */
+    if (row<gameboard.length && col< gameboard[0].length){
+      if(gameboard[row][col].matched()==false){
+        return true;
 
-    return true;
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      return false;
+    }
   }
 
 }
