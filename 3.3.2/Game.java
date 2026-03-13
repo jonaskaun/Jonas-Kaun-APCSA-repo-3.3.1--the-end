@@ -137,7 +137,7 @@ public class Game
       System.out.println();
     }
 
-    System.out.println(board);
+    System.out.println(board.toString());
   }
 
   /**

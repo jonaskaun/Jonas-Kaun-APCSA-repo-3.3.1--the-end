@@ -64,23 +64,32 @@ public class Board
    * 
    * @return a string represetation of the board
    */
+
+  
+  
   public String toString()
   {
-    String boardString ="";
+    String boardString = "";
+    
  
     for(Tile[] t:gameboard){
       for(Tile u : t){
-        boardString += "\t";
+        
         if(u.isShowingValue()== true){
           
-          boardString += u;
+          boardString +="\t" + u;
 
 
+        }
+        else{
+          boardString += "\t[_]";
         }
         
         
       }
-      boardString += "\n";
+      boardString+="\n";
+      
+      
       
     }
  
@@ -126,6 +135,7 @@ public class Board
   {
    
     System.out.println((gameboard[row][column]).getValue());
+    gameboard[row][column].show();
   }  
 
   /** 
