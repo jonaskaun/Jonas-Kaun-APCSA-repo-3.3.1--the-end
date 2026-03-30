@@ -43,8 +43,24 @@ public class HorseData
         double averageWeight = sumWeights/(horseNumber*1.0);
         double averageAge = sumAge/(horseNumber*1.0);
         System.out.println("\nThe average weight is: "+averageWeight+".\nThe average age is: "+averageAge+". \nYou will need "+totalHay+"lbs of hay");
+        horseNumber = 0;
+        String horseNameTwo = "";
+        int horseWeightTwo = 0;
+        double horseAgeTwo = 0.0;
+        String horseTeam = "";
+        for(horseNumber =1;sc.hasNext(); horseNumber++){
+            horseTeam = sc.nextLine();
+            horseName = sc.next();
+            horseWeight = sc.nextInt();
+            horseAge = sc.nextDouble();
+            horseNameTwo = sc.next();
+            horseWeightTwo = sc.nextInt();
+            horseAgeTwo = sc.nextDouble();
+            System.out.print("Team "+horseTeam + ": " + horseName+" weighs "+horseWeight+"lbs, and is "+horseAge+" years old.+ horseNameTwo+\" weighs \"+horseWeightTwo+\"lbs, and is \"+horseAgeTwo+\" years old.\n");
 
-        
+
+
+        }
 
 
         
