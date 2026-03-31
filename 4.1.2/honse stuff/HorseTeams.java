@@ -9,7 +9,7 @@ public class HorseTeams
 {
     public static void main(String[] args) throws IOException
     {
-      Scanner sc = new Scanner(new File("horsedata.txt"));
+      Scanner sc = new Scanner(new File("2horsedata.txt"));
 
       // fixed file size
       for (int i = 0; i < 5; i++) 
@@ -19,6 +19,10 @@ public class HorseTeams
         Horse horse2 = new Horse(sc.next(), sc.nextInt(), sc.nextDouble());
         
         System.out.println(horse1 + " and " + horse2);
+        if(sc.hasNext()){
+          sc.nextLine();
+        }
       }
+      sc.close();
     }
 }

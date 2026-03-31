@@ -48,19 +48,25 @@ public class HorseData
         int horseWeightTwo = 0;
         double horseAgeTwo = 0.0;
         String horseTeam = "";
+        
+        Scanner sca = new Scanner(new File("2horsedata.txt"));
+
+
         for(horseNumber =1;sc.hasNext(); horseNumber++){
-            horseTeam = sc.nextLine();
-            horseName = sc.next();
-            horseWeight = sc.nextInt();
-            horseAge = sc.nextDouble();
-            horseNameTwo = sc.next();
-            horseWeightTwo = sc.nextInt();
-            horseAgeTwo = sc.nextDouble();
-            System.out.print("Team "+horseTeam + ": " + horseName+" weighs "+horseWeight+"lbs, and is "+horseAge+" years old.+ horseNameTwo+\" weighs \"+horseWeightTwo+\"lbs, and is \"+horseAgeTwo+\" years old.\n");
+            horseTeam = sca.nextLine();
+            horseName = sca.next();
+            horseWeight = sca.nextInt();
+            horseAge = sca.nextDouble();
+            horseNameTwo = sca.next();
+            horseWeightTwo = sca.nextInt();
+            horseAgeTwo = sca.nextDouble();
+            System.out.print("Team "+horseTeam + ": " + horseName+" weighs "+horseWeight+"lbs, and is "+horseAge+" years old."+ horseNameTwo+ " weighs "+horseWeightTwo+"lbs, and is "+horseAgeTwo+" years old.\n");
 
 
 
         }
+        sc.close();
+        sca.close();
 
 
         
