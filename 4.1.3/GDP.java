@@ -18,14 +18,26 @@ public class GDP
 
         gdp = GDPData.createDataSet(fileName);
 
-        for(GDPData d:gdp){
-            String s = d.toString();
-            if(s.substring(0,s.indexOf(" ")).equals("Austrailia:")){
-                System.out.println();
+        
+        int F = GDPSearch.find(gdp,0,gdp.size(),"Australia");
+        System.out.println("Largest GDP in Austrailia: "+ F);
+        F = GDPSearch.find(gdp,0,gdp.size(),"Brazil");
+        System.out.println("Largest GDP in Brazil: "+ F);
+        F = GDPSearch.find(gdp,0,gdp.size(),"China");
+        System.out.println("Largest GDP in China: "+ F);
+        F = GDPSearch.find(gdp,0,gdp.size(),"Germany");
+        System.out.println("Largest GDP in Germany: "+ F);
 
-            }
+        
+        for(GDPData g:gdp){
 
         }
+        
+
+
+            
+
+        
 
 
 
