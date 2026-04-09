@@ -28,7 +28,7 @@ public class GDP
         F = GDPSearch.find(gdp,0,gdp.size(),"Germany");
         System.out.println("Largest GDP in Germany: "+ F);
 
-        
+        System.out.println(gdp.get(0).toString());
         for(GDPData g:gdp){
 
         }
