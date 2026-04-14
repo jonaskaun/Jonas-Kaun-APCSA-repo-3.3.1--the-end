@@ -13,7 +13,7 @@ public class GDP
 {
     public static void main(String[] args) throws IOException
     {
-        String fileName = "gdp.csv";
+        String fileName = "gdp_per_capita.csv";
         ArrayList<GDPData> gdp = new ArrayList<>();
 
         gdp = GDPData.createDataSet(fileName);
@@ -27,15 +27,35 @@ public class GDP
         System.out.println("Largest GDP in China: "+ F);
         F = GDPSearch.find(gdp,0,gdp.size(),"Germany");
         System.out.println("Largest GDP in Germany: "+ F);
-
-        System.out.println(gdp.get(0).toString());
-        for(GDPData g:gdp){
+        GDPData dataTemp = gdp.get(0);
+        for(GDPData d:gdp){
+            if((d).getGdpLast()> dataTemp.getGdpLast()){
+                dataTemp = d;
+            }
+        }
+        System.out.println(dataTemp.getCountry());
+        GDPData tempGDP = gdp.get(0);
+        for(int row =0;row<gdp.size();row++){
+            if (gdp.get(row).getGdpLast()>tempGDP.getGdpLast()){
+                tempGDP = gdp.get(row);
+            }
 
         }
-        
+        System.out.println("in 2022, "+ tempGDP.getCountry()+ " had the highest GDP");
+        tempGDP = gdp.get(0);
+        for(int row =0;row<gdp.size();row++){
+            if (gdp.get(row).getGdpLast() - gdp.get(row).getGdpFirst() >(tempGDP.getGdpLast()-tempGDP.getGdpFirst())){
+                tempGDP = gdp.get(row);
+            }
+
+        }
+
+        System.out.println("the country with the largest GDP growth was "+ tempGDP.getCountry());
 
 
-            
+
+
+             
 
         
 
